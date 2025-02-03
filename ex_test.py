@@ -1,5 +1,5 @@
 import unittest
-from encryption import generate_hmac, verify_hmac  # Import your functions
+from hmac1 import generate_hmac, verify_hmac  # Import your functions
 
 class TestHmacFunctions(unittest.TestCase):
 
