@@ -1,6 +1,6 @@
 import hmac
 import hashlib
-def generate_hmac(key, message):
+def generate_hmac(key: bytes, message: str) ->str:
     """
     Generate hmac for the message using the provided key
     :param key: Secret key for hmac gen
@@ -9,10 +9,10 @@ def generate_hmac(key, message):
     """
     #create a new hmac object using the key and sha-256 as the hash function#
 
-    hmac_object = hmac.new(key.encode(), message.encode(), hashlib.sha256 )
+    hmac_object = hmac.new(key, message.encode(), hashlib.sha256 )
     return hmac_object.hexdigest()  # return hmac as a hexadecimal string
 
-def verify_hmac(key, message, received_hmac):
+def verify_hmac(key: bytes, message:str, received_hmac: str)->bool:
     """
     verify the integrity of the message by comparing the generated hmac with the received hmac
     :param key: secret key for hmac gen
@@ -27,7 +27,7 @@ def verify_hmac(key, message, received_hmac):
 
 #example _usage
 if __name__ == "__main__":
-    secret_key ="my_secret_key"
+    secret_key =b"my_secret_key" # use bytes for efficiency
     original_message = "This is a secret message"
 
     #generate hmac
