@@ -17,17 +17,17 @@ pip install -r requirements.txt
 
 ## project structure
 .
-|-- encryption.py           # Contains HMAC generation and verification logic
-|-- client.py               # Client-side implementation for sending files
-|-- server.py               # Server-side implementation for receiving and verifying files
-|-- test_hmac.py            # Unit tests for HMAC functions
-|-- README.md               # Project documentation
+* |-- encryption.py           # Contains HMAC generation and verification logic
+* |-- client.py               # Client-side implementation for sending files
+* |-- server.py               # Server-side implementation for receiving and verifying files
+* |-- test_hmac.py            # Unit tests for HMAC functions
+* |-- README.md               # Project documentation
 
 ## Usage
 * Start the server
 python server.py
 
-**Run the client
+* Run the client
 python client.py
 
 
