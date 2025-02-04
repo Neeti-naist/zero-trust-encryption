@@ -96,7 +96,7 @@ Steps:
 4. Sends the file name, HMAC, and file content to the server.
 
 5. Receives the server's response.
-Example:
+* Example:
 send_file("example.txt", "127.0.0.1", 5000)
 2. Execution Flow
 
@@ -119,9 +119,9 @@ Key Functions
 
 * Stores the file if its integrity is valid; otherwise, discards it.
 
-S* ends a response to the client indicating the result.
+* Sends a response to the client indicating the result.
 
-Example:
+* Example:
 start_server()
 2. Execution Flow
 
