@@ -21,7 +21,7 @@ def start_server():
             print(f"Connection established with {client_address}")
 
             with client_socket:
-                # Receive file and HMAC
+                # Receive file and HMAC 
                 file_name = client_socket.recv(BUFFER_SIZE).decode()
                 client_socket.send(b"Filename received")
 
