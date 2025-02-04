@@ -10,7 +10,7 @@ def send_file(file_name, server_ip, server_port):
     with open(file_name, "rb") as f:
         file_data = f.read()
 
-    # Generate HMAC for the file
+    # Generate HMAC for the file 
     hmac_value = generate_hmac(key, file_data.decode())
 
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client_socket:
