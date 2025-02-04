@@ -1,6 +1,6 @@
 # zero-trust-encryption
 Python encryption for Zero-Trust-Project(HMAC implementation)
-## overview
+## Overview
 In a zero trust model, every request is verified before granting access. This project implements HMAC(Hash-based message authentication code)
 to ensure integrity and authenticity of communications in a zero trust environment.
 
@@ -36,8 +36,6 @@ python client.py
 * The server verifies the HMAC before processing the request.
 * If HMAC is valid, the request is accepted; otherwise, its rejected.
 
-## Configuration
-
 ## Code Explanation
 
 * HMAC Logic (encryption.py)
@@ -50,13 +48,13 @@ Generates an HMAC for a given message using a secret key.
 
 Input:
 
-key: The secret key (in bytes).
+* key: The secret key (in bytes).
 
-message: The input message (in string).
+* message: The input message (in string).
 
 Output:
 
-HMAC in hexadecimal format
+* HMAC in hexadecimal format
 
 Example
 hmac_value = generate_hmac(b"my_secret_key", "Hello World")
@@ -65,15 +63,15 @@ hmac_value = generate_hmac(b"my_secret_key", "Hello World")
 Verifies the integrity of a message by comparing a generated HMAC with a received HMAC.
 Input:
 
-key: The secret key (in bytes).
+* key: The secret key (in bytes).
 
-message: The original message (in string).
+* message: The original message (in string).
 
-received_hmac: The HMAC received for comparison.
+* received_hmac: The HMAC received for comparison.
 
 Output:
 
-Returns True if the HMAC matches; otherwise, False.
+* Returns True if the HMAC matches; otherwise, False.
 Example:
 is_valid = verify_hmac(b"my_secret_key", "Hello World", hmac_value)
 
@@ -89,15 +87,15 @@ Sends a file and its HMAC to the server.
 
 Steps:
 
-Reads the file content.
+1. Reads the file content.
 
-Generates the HMAC for the file.
+2. Generates the HMAC for the file.
 
-Connects to the server using a TCP socket.
+3. Connects to the server using a TCP socket.
 
-Sends the file name, HMAC, and file content to the server.
+4. Sends the file name, HMAC, and file content to the server.
 
-Receives the server's response.
+5. Receives the server's response.
 Example:
 send_file("example.txt", "127.0.0.1", 5000)
 2. Execution Flow
@@ -113,15 +111,15 @@ Key Functions
 
 1. start_server()
 
-Listens for incoming connections.
+* Listens for incoming connections.
 
-Receives the file name, HMAC, and file content from the client.
+* Receives the file name, HMAC, and file content from the client.
 
-Verifies the file's integrity using the provided HMAC.
+* Verifies the file's integrity using the provided HMAC.
 
-Stores the file if its integrity is valid; otherwise, discards it.
+* Stores the file if its integrity is valid; otherwise, discards it.
 
-Sends a response to the client indicating the result.
+S* ends a response to the client indicating the result.
 
 Example:
 start_server()
