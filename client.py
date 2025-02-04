@@ -33,8 +33,8 @@ def send_file(file_name, server_ip, server_port):
         print(f"Server response: {server_response}")
 
 if __name__ == "__main__":
-    # Example file
-    file_name = "example_file.txt"
+    #for example
+    file_name = "neeti_file.txt"
     with open(file_name, "w") as f:
         f.write("This is a test file for HMAC verification.")
 
